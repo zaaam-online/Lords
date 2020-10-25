@@ -1,0 +1,248 @@
+﻿<?xml version="1.0"?>
+<GameConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TileConfiguration TileWidth="50" TileHeight="50">
+    <Tiles>
+      <Tile DID="0" TilePath="Sprites\Tiles\xx" TileID="xx">
+        <FT>
+        </FT>
+        <ST>
+        </ST>
+      </Tile>
+      <Tile DID="0" TilePath="Sprites\Tiles\f0B" TileID="f0B">
+        <FT>
+          <Texture TTID="f0A" />
+          <Texture TTID="f0B" />
+          <Texture TTID="f4A" />  
+          <Texture TTID="f4B" />
+          <Texture TTID="f10B" />
+        </FT>
+        <ST>
+          <Texture TTID="f0A" />
+          <Texture TTID="f0B" />
+          <Texture TTID="f6A" />
+          <Texture TTID="f10A" />
+          <Texture TTID="f10C" />
+        </ST>
+      </Tile>
+      <Tile DID="0" TilePath="Sprites\Tiles\f0A" TileID="f0A">
+        <FT>
+          <Texture TTID="f0A" />     
+          <Texture TTID="f0B" />
+          <Texture TTID="f4A" />  
+          <Texture TTID="f4B" />
+          <Texture TTID="f10C" />
+        </FT>
+        <ST>
+          <Texture TTID="f0A" />     
+          <Texture TTID="f0B" />
+          <Texture TTID="f6A" />
+          <Texture TTID="f10A" />
+        </ST>
+      </Tile>
+      <Tile DID="0" TilePath="Sprites\Tiles\g0A" TileID="g0A">
+        <FT>
+          <Texture TTID="g0A" />
+          <Texture TTID="f8A" />
+          <Texture TTID="f1A" />
+          <Texture TTID="f7A" />
+        </FT>
+        <ST>
+          <Texture TTID="g0A" />
+          <Texture TTID="f1A" />
+          <Texture TTID="f2A" />
+          <Texture TTID="f3A" />
+        </ST>
+      </Tile>
+      <Tile DID="1" TilePath="Sprites\Tiles\f1A" TileID="f1A">
+        <FT>
+          <Texture TTID="f2A" />
+          <Texture TTID="f9A" />  
+          <Texture TTID="f9B" />
+        </FT>
+        <ST>
+          <Texture TTID="f8A" />
+          <Texture TTID="f9A" />  
+          <Texture TTID="f9B" />
+        </ST>
+      </Tile>
+      <Tile DID="2" TilePath="Sprites\Tiles\f2A" TileID="f2A">
+        <FT>
+          <Texture TTID="f2A" />
+          <Texture TTID="f3A" />
+          <Texture TTID="f9B" />
+          <Texture TTID="f9A" />  
+        </FT>
+        <ST>
+          <Texture TTID="f0A" />     
+          <Texture TTID="f0B" />
+          <Texture TTID="f10A" />
+          <Texture TTID="f6A" />
+          <Texture TTID="f10C" />
+        </ST>
+      </Tile>
+      <Tile DID="3" TilePath="Sprites\Tiles\f3A" TileID="f3A">
+        <FT>
+          <Texture TTID="g0A" />
+          <Texture TTID="f8A" />
+          <Texture TTID="f1A" />
+          <Texture TTID="f7A" />
+        </FT>
+        <ST>
+          <Texture TTID="f4A" />
+          <Texture TTID="f5A" />
+          <Texture TTID="f4B" />
+          <Texture TTID="f10B" />
+        </ST>
+      </Tile>
+      <Tile DID="4" TilePath="Sprites\Tiles\f4B" TileID="f4B">
+        <FT>
+          <Texture TTID="g0A" />
+          <Texture TTID="f8A" />
+          <Texture TTID="f1A" />
+          <Texture TTID="f7A" />
+        </FT>
+        <ST>
+          <Texture TTID="f5A" />
+          <Texture TTID="f4A" />  
+          <Texture TTID="f4B" />
+          <Texture TTID="f10B" />
+        </ST>
+      </Tile>
+      <Tile DID="4" TilePath="Sprites\Tiles\f4A" TileID="f4A">
+        <FT>
+          <Texture TTID="g0A" />
+          <Texture TTID="f8A" />
+          <Texture TTID="f1A" />
+          <Texture TTID="f7A" />
+      
+        </FT>
+        <ST>
+          <Texture TTID="f5A" />
+          <Texture TTID="f4A" />  
+          <Texture TTID="f4B" />
+          <Texture TTID="f10B" />
+        </ST>
+      </Tile>
+      <Tile DID="5" TilePath="Sprites\Tiles\f5A" TileID="f5A">
+        <FT>
+          <Texture TTID="g0A" />
+          <Texture TTID="f8A" />
+          <Texture TTID="f1A" />
+          <Texture TTID="f7A" />
+        </FT>
+        <ST>
+          <Texture TTID="g0A" />
+          <Texture TTID="f1A" />
+          <Texture TTID="f2A" />
+          <Texture TTID="f3A" />
+        </ST>
+      </Tile>
+      <Tile DID="6" TilePath="Sprites\Tiles\f6A" TileID="f6A">
+        <FT>
+          <Texture TTID="f6A" />
+          <Texture TTID="f5A" />
+          <Texture TTID="f10A" />
+        </FT>
+        <ST>
+          <Texture TTID="g0A" />
+          <Texture TTID="f1A" />
+          <Texture TTID="f2A" />
+          <Texture TTID="f3A" />
+        </ST>
+      </Tile>
+      <Tile DID="7" TilePath="Sprites\Tiles\f7A" TileID="f7A">
+        <FT>
+          <Texture TTID="f6A" />
+          <Texture TTID="f5A" />
+        </FT>
+        <ST>
+          <Texture TTID="g0A" />
+          <Texture TTID="f1A" />
+          <Texture TTID="f2A" />
+          <Texture TTID="f3A" />
+        </ST>
+      </Tile>
+      <Tile DID="8" TilePath="Sprites\Tiles\f8A" TileID="f8A">
+        <FT>
+          <Texture TTID="f0A" />
+          <Texture TTID="f10B" />
+          <Texture TTID="f0B" />
+          <Texture TTID="f10C" />
+        </FT>
+        <ST>
+          <Texture TTID="f8A" />
+          <Texture TTID="f7A" />
+          <Texture TTID="f9A" />  
+          <Texture TTID="f9B" />
+        </ST>
+      </Tile>
+      <Tile DID="9" TilePath="Sprites\Tiles\f9A" TileID="f9A">
+        <FT>
+          <Texture TTID="f0A" />     
+          <Texture TTID="f0B" />
+          <Texture TTID="f10C" />
+          <Texture TTID="f10B" />
+        </FT>
+        <ST>
+          <Texture TTID="f0A" />     
+          <Texture TTID="f0B" />
+          <Texture TTID="f6A" />
+          <Texture TTID="f10C" />
+          <Texture TTID="f10A" />
+        </ST>
+      </Tile>
+      <Tile DID="9" TilePath="Sprites\Tiles\f9B" TileID="f9B">
+        <FT>
+          <Texture TTID="f0A" />     
+          <Texture TTID="f0B" />
+          <Texture TTID="f4B" />
+        </FT>
+        <ST>
+          <Texture TTID="f0A" />     
+          <Texture TTID="f0B" />
+          <Texture TTID="f6A" />
+        </ST>
+      </Tile>
+      <Tile DID="10" TilePath="Sprites\Tiles\f10A" TileID="f10A">
+        <FT>
+          <Texture TTID="f0A" />
+          <Texture TTID="f0B" />
+          <Texture TTID="f4A" />  
+          <Texture TTID="f4B" />
+        </FT>
+        <ST>
+          <Texture TTID="f7A" />
+          <Texture TTID="f8A" />
+          <Texture TTID="f9A" />
+          <Texture TTID="f9B" />
+        </ST>
+      </Tile>
+      <Tile DID="9" TilePath="Sprites\Tiles\f10B" TileID="f10B">
+        <FT>
+          <Texture TTID="f2A" />
+          <Texture TTID="f3A" />
+          <Texture TTID="f9B" />
+          <Texture TTID="f9A" />
+        </FT>
+        <ST>
+          <Texture TTID="f0A" />
+          <Texture TTID="f0B" />
+          <Texture TTID="f6A" />
+        </ST>
+      </Tile>
+      <Tile DID="9" TilePath="Sprites\Tiles\f10C" TileID="f10C">
+        <FT>
+          <Texture TTID="f5A" />
+          <Texture TTID="f6A" />
+          <Texture TTID="f10A" />
+        </FT>
+        <ST>
+          <Texture TTID="f4A" />
+          <Texture TTID="f4B" />
+          <Texture TTID="f5A" />
+          <Texture TTID="f10B" />
+        </ST>
+      </Tile>
+    </Tiles>
+  </TileConfiguration>
+</GameConfiguration>
