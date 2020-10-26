@@ -7,10 +7,10 @@ namespace Lord
         public const int XSPACE =0;
         public const int YSPACE =50;
 
-        public const int MAP_TILES_X = 40;
-        public const int MAP_TILES_Y = 40;
+        public const int MAP_TILES_X = 30;
+        public const int MAP_TILES_Y = 30;
 
-        public const int MAP_TILES_RANDOM = 1200;
+        public const int MAP_TILES_RANDOM = 900;
 
 
         public const int WINDOWWIDTH = 1024;

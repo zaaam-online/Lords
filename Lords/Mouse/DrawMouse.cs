@@ -94,6 +94,7 @@ namespace Lord
             }
             else
             {
+                if(!(Mouse.GetState().RightButton== Microsoft.Xna.Framework.Input.ButtonState.Pressed))
                 batch.Draw(_cursorhand, new Vector2(mx, my), Color.White);
             }
 
