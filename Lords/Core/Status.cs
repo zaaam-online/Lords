@@ -15,7 +15,7 @@ namespace Lord
         private Map _map = null;
 
         //Zoomfactor enables Gridview 50 is Normal
-        private int _zoomfaktor = 52;
+        private int _zoomfaktor = CONSTANTS.ZOOM_FACTOR;
         private List<IDrawAbleObject> _objects = null;
         public List<IDrawAbleObject> DrawObjects { get { return this._objects; } set { this._objects = value; } }
 

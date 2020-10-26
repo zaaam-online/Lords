@@ -4,4 +4,5 @@ How to get XML From the Content Pipeline
 http://rbwhitaker.wikidot.com/monogame-drawing-text-with-spritefonts
 Spritefonts
 
-https://github.com/csharpskolan/MonoGame.UI.Forms/tree/master/FormsTest
+Setup Environment
+https://docs.monogame.net/articles/getting_started/1_setting_up_your_development_environment_windows.html

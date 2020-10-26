@@ -4,6 +4,8 @@ namespace Lord
 {
     static class CONSTANTS
     {
+        public const int ZOOM_FACTOR = 52;
+
         public const int XSPACE =0;
         public const int YSPACE =50;
 

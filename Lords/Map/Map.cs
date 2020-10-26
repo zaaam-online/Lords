@@ -25,6 +25,8 @@ namespace Lord
         /// Contains all Map Positions 
         /// </summary>
         public List<MapPosition> MapPositions { get { return this._mapPositions; } set { this._mapPositions = value; } }
+
+
     }
 }
 

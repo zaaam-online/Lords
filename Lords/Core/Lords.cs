@@ -138,7 +138,8 @@ namespace Lord
             _spriteBatch.Begin();
 
             _spriteBatch.Draw(_textures[CONSTANTS.TXT_YEAR_MENU], new Vector2(0, 0), Color.White);
-            _spriteBatch.DrawString(_status.Font, "Year:" + _round.ToString(), new Vector2(10, 15), Color.Red); ;
+            _spriteBatch.DrawString(_status.Font, "Year:" + _round.ToString(), new Vector2(10, 15), Color.Red);
+
             DrawMap(gameTime);
 
 
