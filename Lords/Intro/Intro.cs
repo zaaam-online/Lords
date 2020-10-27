@@ -12,7 +12,7 @@ namespace Lords.Intro
     class Intro
     {
         
-        private string _introPicture = @"Intro/INTRO";
+        private string _introPicture = @"Intro/LordsIntro";
         private string _L_letter = @"Intro/L";
         private string _o_letter = @"Intro/opng";
         private string _r_letter = @"Intro/r";
@@ -31,12 +31,13 @@ namespace Lords.Intro
         private Texture2D _r_TXT = null;
         private Texture2D _d_TXT = null;
         private Texture2D _s_TXT = null;
+        Random rnd = new Random();
 
         private bool _showintro = true;
 
         public Intro(ContentManager contentmanager)
-        {
-            _INTRO_TXT = contentmanager.Load<Texture2D>(_introPicture);
+        {          
+            _INTRO_TXT = contentmanager.Load<Texture2D>(_introPicture + rnd.Next(1, 5).ToString());
             _L_TXT = contentmanager.Load<Texture2D>(_L_letter);
             _o_TXT = contentmanager.Load<Texture2D>(_o_letter);
             _r_TXT = contentmanager.Load<Texture2D>(_r_letter);
