@@ -1,5 +1,6 @@
 using Lords;
 using Lords.DemoObjects;
+using Lords.Intro;
 using LordsOfEngland;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -24,6 +25,8 @@ namespace Lord
         private CityMenu _cityMenu = null;
         private List<City> _cities = new List<City>(5);
 
+        private Intro _intro = null;
+        bool _showIntro = true;
 
 
         private int _round = 1645;
@@ -45,6 +48,7 @@ namespace Lord
 
             _graphics = new GraphicsDeviceManager(this);
 
+    
 
 
             // Initialises all stat Params for the Game
@@ -87,6 +91,9 @@ namespace Lord
             {
                 a.InitTextures(Content);
             }
+
+         
+             _intro = new Intro(Content);
 
             _status.Font = Content.Load<SpriteFont>(CONSTANTS.SPRITE_FONT_DEFAULT);
             _cityMenu = new CityMenu(CONSTANTS.WINDOWWIDTH / 2, CONSTANTS.WINDOWHEIGHT / 2, Content);
@@ -137,60 +144,67 @@ namespace Lord
         {
             _spriteBatch.Begin();
 
-            _spriteBatch.Draw(_textures[CONSTANTS.TXT_YEAR_MENU], new Vector2(0, 0), Color.White);
-            _spriteBatch.DrawString(_status.Font, "Year:" + _round.ToString(), new Vector2(10, 15), Color.Red);
-
-            DrawMap(gameTime);
-
-
-            if (_showcityMenu && _activeCity != null)
+            if (_intro.Showintro)
+                _intro.DrawIntro(_spriteBatch);
+            else
             {
-                _cityMenu.DrawCityMenu(_spriteBatch, _activeCity);
-                _showcityMenu = _cityMenu.ShowCityMenu();
-            }
 
 
+                _spriteBatch.Draw(_textures[CONSTANTS.TXT_YEAR_MENU], new Vector2(0, 0), Color.White);
+                _spriteBatch.DrawString(_status.Font, "Year:" + _round.ToString(), new Vector2(10, 15), Color.Red);
 
-            Microsoft.Xna.Framework.Input.ButtonState state = Mouse.GetState().RightButton;
-            if (state == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
-            {
-                MapPosition pos = _mouse.GetMouseMapPosition(_status);
-                if (pos != null)
+                DrawMap(gameTime);
+
+
+                if (_showcityMenu && _activeCity != null)
                 {
-                    this.Window.Title = "Pressed" + pos.TID + "POS X" + pos.XPos + ".POS Y" + pos.YPos;
-
-                    City cit = _cities.Find(o => o.MapPosition.XPos == pos.XPos && o.MapPosition.YPos == pos.YPos);
-                    if (cit != null)
-                    {
-                        this.Window.Title = cit.Name;
-                        _activeCity = cit;
-                        _showcityMenu = true;
-                    }
-                } }
-
-            state = Mouse.GetState().LeftButton;
-
-            if (state == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
-            {
-
-                if (Menu.MenuIspressed() == true && !_counterprotect)
-                {
-                    //todo Protect Counting up with - mouse State Year Combination
-                    _round++;
-                    _counterprotect = true;
+                    _cityMenu.DrawCityMenu(_spriteBatch, _activeCity);
+                    _showcityMenu = _cityMenu.ShowCityMenu();
                 }
+
+
+
+                Microsoft.Xna.Framework.Input.ButtonState state = Mouse.GetState().RightButton;
+                if (state == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
+                {
+                    MapPosition pos = _mouse.GetMouseMapPosition(_status);
+                    if (pos != null)
+                    {
+                        this.Window.Title = "Pressed" + pos.TID + "POS X" + pos.XPos + ".POS Y" + pos.YPos;
+
+                        City cit = _cities.Find(o => o.MapPosition.XPos == pos.XPos && o.MapPosition.YPos == pos.YPos);
+                        if (cit != null)
+                        {
+                            this.Window.Title = cit.Name;
+                            _activeCity = cit;
+                            _showcityMenu = true;
+                        }
+                    }
+                }
+
+                state = Mouse.GetState().LeftButton;
+
+                if (state == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
+                {
+
+                    if (Menu.MenuIspressed() == true && !_counterprotect)
+                    {
+                        //todo Protect Counting up with - mouse State Year Combination
+                        _round++;
+                        _counterprotect = true;
+                    }
+                }
+
+
+                //prevent Years from Counting UP
+                if (state == Microsoft.Xna.Framework.Input.ButtonState.Released)
+                {
+                    _counterprotect = false;
+                }
+
+
+                _mouse.DrawTheMouse(_spriteBatch, GraphicsDevice, _status);
             }
-        
-
-            //prevent Years from Counting UP
-            if (state == Microsoft.Xna.Framework.Input.ButtonState.Released)
-            {
-                _counterprotect = false;
-            }
-
-
-            _mouse.DrawTheMouse(_spriteBatch, GraphicsDevice, _status);
-
             
             _spriteBatch.End();
         }
