@@ -33,11 +33,11 @@ namespace LordsOfEngland
         [XmlAttribute]
         public string TileID { get { return this._tileID; } set { this._tileID = value; } }
 
-
         private List<Texture> _tilefollowTextures = new List<Texture>(2);
         private List<Texture> _tilesubTextures = new List<Texture>(2);
         public List<Texture> FT { get { return this._tilefollowTextures; } set { this._tilefollowTextures = value; } }
         public List<Texture> ST { get { return this._tilesubTextures; } set { this._tilesubTextures = value; } }
+
     }
 }
 
