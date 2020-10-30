@@ -11,6 +11,18 @@ namespace Lord
         private int _residents = 1200;
         private int _happiniess = 100;
 
+        public City()
+        { }
+
+        public City(string name, MapPosition mapPosition, int cityType,int fields, int happieness, int residents) {
+            this.Name = name;
+            this.MapPosition = mapPosition;
+            this.CityType = cityType;
+            this.Fields = fields;
+            this.Happiniess = happieness;
+            this.Residents = residents;
+        }
+
 
         public string Name { get => _name; set => _name = value; }
         public MapPosition MapPosition { get => _pmos; set => _pmos = value; }
