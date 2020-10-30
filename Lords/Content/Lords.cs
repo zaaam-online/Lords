@@ -175,7 +175,7 @@ namespace Lord
             if (state == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
             {
 
-                if (Menu.MenuIspressed() == true && !_counterprotect)
+                if (Menu.menuButton.ButtonIspressed() == true && !_counterprotect)
                 {
                     //todo Protect Counting up with - mouse State Year Combination
                     _round++;
@@ -196,7 +196,7 @@ namespace Lord
             if (state == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
             {
 
-                if (StartGameMenu.MenuIspressed() == true && !_counterprotect)
+                if (StartGameMenu.menuButton.ButtonIspressed() == true && !_counterprotect)
                 {
                     //todo Protect Counting up with - mouse State Year Combination
                     StartGameText = "Clicked";
