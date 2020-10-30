@@ -3,6 +3,11 @@ using LordsOfEngland;
 using System;
 using System.Collections.Generic;
 using System.Xml;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.IO;
+using System.Text;
+using System.Runtime.Serialization.Json;
 
 namespace Lords.DemoObjects
 {
@@ -11,7 +16,10 @@ namespace Lords.DemoObjects
         public static void CreateDemoXMLGameConfig(string filename)
         {
             GameConfiguration conf = new GameConfiguration();
+
             Tile tile = new Tile("xx", "xx", 0);
+            Tile tile2 = new Tile("f0B", "f0B", 0);
+
             Texture xx = new Texture("xx");
             Texture f0A = new Texture("f0A");
             Texture f0B = new Texture("f0B");
@@ -22,19 +30,29 @@ namespace Lords.DemoObjects
             Texture f10C = new Texture("f10C");
             Texture f6A = new Texture("f6A");
 
-            Tile tile2 = new Tile("f0B", "f0B", 0);
-            tile2.FT.Add(f0A);
-            tile2.FT.Add(f0B);
-            tile2.FT.Add(f4A);
-            tile2.FT.Add(f4B);
-            tile2.FT.Add(f10B);
+            
+            List<Texture> listOfFollowTextutes = new List<Texture>()
+            {
+                f0A,
+                f0B,
+                f4A,
+                f4B,
+                f10B
 
-            tile2.ST.Add(f0A);
-            tile2.ST.Add(f0B);
-            tile2.ST.Add(f6A);
-            tile2.ST.Add(f10A);
-            tile2.ST.Add(f10C);
+            };
 
+            List<Texture> listOfSubTextutes = new List<Texture>()
+            {
+                f0A,
+                f0B,
+                f6A,
+                f10A,
+                f10C
+
+            };
+
+            tile2.FT.AddRange(listOfFollowTextutes);
+            tile2.FT.AddRange(listOfSubTextutes);
 
             conf.TileConfiguration.Tiles.Add(tile);
             conf.TileConfiguration.Tiles.Add(tile2);
@@ -46,36 +64,34 @@ namespace Lords.DemoObjects
 
         }
 
+
         public static void CreateCities(GameStatus status, List<City> cities)
         {
-            Random rnd = new Random();
-            int i = rnd.Next(0, CONSTANTS.MAP_TILES_RANDOM);
-            MapPosition pos = status.Map.MapPositions[i];
-            City london = new City();
-            london.Name = "London";
-            london.MapPosition = pos;
+            RandomPosition pos = new RandomPosition(status);
+
+            City london = new City("London", pos.randomize(status), 2, 0, 50, 999);
             cities.Add(london);
 
-            i = rnd.Next(0, CONSTANTS.MAP_TILES_RANDOM);
-            pos = status.Map.MapPositions[i];
-            City aberdeen = new City();
-            aberdeen.Name = "Aberdeen";
-            aberdeen.MapPosition = pos;
-            aberdeen.CityType = 2;
-            aberdeen.Happiniess = 50;
-            aberdeen.Residents = 999;
+            City aberdeen = new City("Aberdeen", pos.randomize(status), 2, 0, 50, 999);
             cities.Add(aberdeen);
 
-            i = rnd.Next(0, CONSTANTS.MAP_TILES_RANDOM);
-            pos = status.Map.MapPositions[i];
-            City birmingham = new City();
-            birmingham.Name = "Birmingham";
-            birmingham.MapPosition = pos;
-            birmingham.CityType = 3;
-            birmingham.Happiniess = 99;
-            birmingham.Residents = 1450;
+            City birmingham = new City("Birmingham", pos.randomize(status), 3, 0, 99, 1450);
             cities.Add(birmingham);
+        
+            City beispiel = new City("Beispiel", pos.randomize(status), 3, 0, 99, 1450);
+            cities.Add(beispiel);
         }
 
+    }
+
+    public class RandomPosition {
+        public RandomPosition(GameStatus status) {
+            randomize(status);
+        }
+        public MapPosition randomize(GameStatus status) {
+            Random rnd = new Random();
+            int i = rnd.Next(0, CONSTANTS.MAP_TILES_RANDOM);
+            return status.Map.MapPositions[i];
+        }
     }
 }
