@@ -3,22 +3,22 @@ namespace Lords.City
 {
     public class Seller
     {
-        private SellerCategory _wool;
-        private SellerCategory _meat;
-        private SellerCategory _milk;
-        private SellerCategory _grain;
+        private ProductCategory _wool;
+        private ProductCategory _meat;
+        private ProductCategory _milk;
+        private ProductCategory _grain;
 
         public Seller()
         {
         }
 
-        public SellerCategory Wool { get => _wool; set => _wool = value; }
-        public SellerCategory Meat { get => _meat; set => _meat = value; }
-        public SellerCategory Milk { get => _milk; set => _milk = value; }
-        public SellerCategory Grain { get => _grain; set => _grain = value; }
+        public ProductCategory Wool { get => _wool; set => _wool = value; }
+        public ProductCategory Meat { get => _meat; set => _meat = value; }
+        public ProductCategory Milk { get => _milk; set => _milk = value; }
+        public ProductCategory Grain { get => _grain; set => _grain = value; }
     }
 
-    public class SellerCategory
+    public class ProductCategory
     {
         private string _name = string.Empty;
         private int _numberOfProduct = 0;
