@@ -65,20 +65,20 @@ namespace Lords.DemoObjects
         }
 
 
-        public static void CreateCities(GameStatus status, List<City> cities)
+        public static void CreateCities(GameStatus status, List<Lord.City> cities)
         {
             RandomPosition pos = new RandomPosition(status);
 
-            City london = new City("London", pos.randomize(status), 2, 0, 50, 999);
+            Lord.City london = new Lord.City("London", pos.randomize(status), 2, 0, 50, 999);
             cities.Add(london);
 
-            City aberdeen = new City("Aberdeen", pos.randomize(status), 2, 0, 50, 999);
+            Lord.City aberdeen = new Lord.City("Aberdeen", pos.randomize(status), 2, 0, 50, 999);
             cities.Add(aberdeen);
 
-            City birmingham = new City("Birmingham", pos.randomize(status), 3, 0, 99, 1450);
+            Lord.City birmingham = new Lord.City("Birmingham", pos.randomize(status), 3, 0, 99, 1450);
             cities.Add(birmingham);
-        
-            City beispiel = new City("Beispiel", pos.randomize(status), 3, 0, 99, 1450);
+
+            Lord.City beispiel = new Lord.City("Beispiel", pos.randomize(status), 3, 0, 99, 1450);
             cities.Add(beispiel);
         }
 
